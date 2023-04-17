@@ -1,0 +1,16 @@
+<h2>Angular Chat App</h2>
+<p>as: {{ user }}</p>
+
+<div>
+  <input type="text" [(ngModel)]="send" />
+  <button (click)="sendMessage()">Send</button>
+</div>
+
+<div style="width: 100%" *ngFor="let message of messages">
+  <div *ngIf="message.user === user" style="text-align: end">
+    {{ message.user }}: {{ message.message }}
+  </div>
+  <div *ngIf="message.user !== user" style="text-align: start">
+    {{ message.user }}: {{ message.message }}
+  </div>
+</div>
